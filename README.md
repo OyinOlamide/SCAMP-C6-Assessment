@@ -19,11 +19,12 @@ To test and set up and test this infrastructure, follow the steps below.
 `node ./sequelize/sychronize.js`
 
 - To start up the app, run:
+
  <html>
       <head>
         npm run nodemon
       </head>
-    </html>
+  </html>
 
 
 - Run the code below to start crontab that will send emails for overdue invoices
