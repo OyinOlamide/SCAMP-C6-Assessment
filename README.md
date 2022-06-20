@@ -3,7 +3,7 @@ NodeJS backend assessment for She Code Africa cohort 6
 
 # PAYMENT REMINDER APPLICATION
 This API infrastructure handles payment reminders automatically.
-
+To further understand this project, please visit https://github.com/she-code-africa/SCAMP-Cohort6-Technical-Assessment/blob/master/intermediate/nodejs.md
 
 To test and set up and test this infrastructure, follow the steps below.
 
