@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  .backdrop
+      .invoice
+        if invoice.status === "paid"
+            .paid
+                p Paid
+        .header
+           .left
+            h3 Invoice ##{invoice.id}
+           .right
+            h4 #{appName}
+        .address
+            .left
+                h5 Recipient
+                p #{invoice.User.firstName} #{invoice.User.lastName}
+                p #{invoice.User.address}
+                p #{invoice.User.city}
+                p #{invoice.User.state}
+                p #{invoice.User.country}
+        table
+            thead
+                tr
+                    td Description
+                    td Price
+                    td Quantity
+                    td Total
+            tbody
+                each item in invoice.InvoiceItems
+                    tr
+                        td #{item.description}
+                        td #{item.price} NGN
+                        td #{item.quantity}
+                        td #{item.price * item.quantity} NGN
+
+        #total
+            p
+                b Total
+                span #{invoice.InvoiceItems.reduce((prev, curr) => (curr.quantity * curr.price + prev), 0)} NGN
+
+        if(invoice.status != "paid")
+            #pay
+                a(class="button" href="#{appUrl}/invoices/#{invoice.id}/mark-as-paid") Pay Now
